@@ -1,0 +1,30 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+.coming-soon {
+    text-align: center;
+    display: flex;
+    gap:20px;
+}
+
+.shopping-cart-container {
+    width: 80px;
+    height: auto;
+    position: relative;
+}
+
+.cart-number {
+    position: absolute;
+    top:2px;
+    right: 20px;
+    color: white;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.shopping-cart-icon {
+    width: 100%;
+    height: auto;
+}
