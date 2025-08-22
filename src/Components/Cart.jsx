@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import placeholderImage from '../../data/placeholder.png';
+import "../css/Cart.css"
 
 export default function Cart({ cart, setCart, handleCloseCart }) {
     const [workingCart, setWoringCart]= useState(cart)
@@ -84,8 +85,12 @@ function handleConfirm(event) {
                     src={placeholderImage}
                     alt=""
                   />
-                  <h2>{item.baseName}</h2>
-                  {item.variantName !== 'Default' ? (<p>{item.variantName}</p>) : null}
+
+                  <div className='cartListItemInfo'>
+                    <h2>{item.baseName}</h2>
+                    {item.variantName !== 'Default' ? (<p>{item.variantName}</p>) : null}
+                  </div>
+
                   <div className="cartListItemSubtotal">
                     <label>
                         Count: 

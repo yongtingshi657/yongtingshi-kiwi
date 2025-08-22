@@ -33,7 +33,7 @@ export default function Header({ cart, handleOpenCart }) {
           <button type="button" onClick={handleOpenCart}>
             <img className="shopping-cart-icon" src={shoppingCartIcon} />
 
-            <p className="cart-number">{getItemCount()}</p>
+            <span className="cart-number">{getItemCount()}</span>
           </button>
         </div>
       </header>
