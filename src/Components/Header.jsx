@@ -3,21 +3,23 @@ import '../css/Header.css';
 import shoppingCartIcon from '../assets/icons/shoppingCart.svg';
 import { useEffect } from 'react';
 
-export default function Header({ cart }) {
+export default function Header({ cart, handleOpenCart }) {
   const cartNumber = cart.length;
-  console.log(cartNumber);
-  
-  // log carts item
-  useEffect(()=>{
-      cart.forEach((item)=>{
-        console.log(item.baseName, item.cartItemId) 
-      })
+  function getItemCount() {
+    return cart.reduce((acc, item) => acc + item.itemCount, 0);
+  }
 
-      if(cartNumber > 0){
-          console.log('--end of cart--');
-      }
-  })
-  
+  // log carts item
+  // useEffect(()=>{
+  //     cart.forEach((item)=>{
+  //       console.log(item.baseName, item.cartItemId)
+  //     })
+
+  //     if(cartNumber > 0){
+  //         console.log('--end of cart--');
+  //     }
+  // })
+
   return (
     <>
       <header>
@@ -28,8 +30,11 @@ export default function Header({ cart }) {
           <h1>CTD Swag</h1>
         </div>
         <div className="shopping-cart-container">
-          <img className="shopping-cart-icon" src={shoppingCartIcon} />
-          {cartNumber > 0 && <div className="cart-number">{cartNumber}</div>}
+          <button type="button" onClick={handleOpenCart}>
+            <img className="shopping-cart-icon" src={shoppingCartIcon} />
+
+            <p className="cart-number">{getItemCount()}</p>
+          </button>
         </div>
       </header>
     </>

@@ -2,27 +2,31 @@
     box-sizing: border-box;
     margin: 0;
 }
+
 .productList {
     list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap:20px;
     border: 5px black solid;
     background-color:lightblue;
+    margin: 0 auto;
+    justify-items: center;
+    align-items: center;
+    padding: 20px;
 }
 
-
 .itemCard {
-      width:200px;
-      height:500px;
-      border: 1px grey solid;
-      border-radius: 5px;
-      margin: 20px 20px 0 20px;
-      background-color: aliceblue;
-      padding: 2px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+    width:200px;
+    height:500px;
+    border: 1px grey solid;
+    border-radius: 5px;
+    background-color: aliceblue;
+    padding: 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
 }
 
 .itemCard h1{
@@ -40,3 +44,57 @@
     padding: 10px;
 }
 
+.productVariantWrapper {
+  position: absolute;
+  top: 60%; /* overlap upward by half of card height */
+  left: 50%; /* center horizontally */
+  transform: translateX(-50%);
+  
+  border: 1px solid black;
+  background-color: bisque;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  width: 500px;
+  z-index: 1000;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.productVariantWrapper ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centers li elements horizontally */
+}
+
+.variantPreview img{
+    width:200px;
+    height: auto;
+}
+
+.productVariant {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    margin: 10px auto;
+    border: 1px black solid;
+    padding: 10px;
+    width: 90%;
+}
+
+.variantsCloseButton {
+    background-color: lightblue;
+    width: 90%;
+    display: inline-block;
+    margin: auto;
+}
+
+.variantDetails button {
+    margin-top: 10px;
+    background-color: lightgoldenrodyellow;
+}
