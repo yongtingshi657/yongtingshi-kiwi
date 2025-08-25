@@ -1,6 +1,9 @@
 import { useState } from 'react';
-import placeholderImage from '../../data/placeholder.png';
-import "../css/Cart.css"
+import placeholderImage from '../../../data/placeholder.png';
+import CartItem from './CartItem';
+
+
+import "../../css/Cart.css"
 
 export default function Cart({ cart, setCart, handleCloseCart }) {
     const [workingCart, setWoringCart]= useState(cart)
@@ -66,10 +69,10 @@ function handleConfirm(event) {
     <>
       <div className="cartScreen">
         {/*
-   .cartScreen covers the product list with
-   a div that has a blur effect placed on it.
-   this makes the product buttons unclickable
-  */}
+              .cartScreen covers the product list with
+              a div that has a blur effect placed on it.
+              this makes the product buttons unclickable
+              */}
       </div>
       <div className="cartListWrapper">
         {workingCart.length === 0 ? (
@@ -79,32 +82,11 @@ function handleConfirm(event) {
           <ul className="cartList">
             {workingCart.map((item) => {
               return (
-                <li className="cartListItem" key={item.id}>
-                  <img
-                    className="placeholder-img"
-                    src={placeholderImage}
-                    alt=""
-                  />
-
-                  <div className='cartListItemInfo'>
-                    <h2>{item.baseName}</h2>
-                    {item.variantName !== 'Default' ? (<p>{item.variantName}</p>) : null}
-                  </div>
-
-                  <div className="cartListItemSubtotal">
-                    <label>
-                        Count: 
-                        <input 
-                        type='number'
-                        value={item.itemCount}
-                        onChange={(event)=> handleUpdateField({event,id:item.id})}
-                        />
-                    </label>
-                    <p>$Subtotal:$
-                      {(item.price * item.itemCount).toFixed(2) || 0}
-                    </p>
-                  </div>
-                </li>
+               <CartItem 
+               key={item.id}
+               item={item}
+               onHandleItemUpdate={handleUpdateField}
+               />
               );
             })}
           </ul>

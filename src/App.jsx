@@ -1,10 +1,11 @@
 import './App.css';
 import { useState } from 'react';
 import inventoryData from './assets/inventory.json';
-import Header from './Components/Header';
-import ProductCard from './Components/ProductCard';
-import ProductList from './Components/ProductList';
-import Cart from './Components/Cart';
+import Header from './shared/Header';
+import ProductCard from './features/ProductCard';
+import ProductList from './features/ProductList';
+import Cart from './features/Cart/Cart';
+import Footer from './shared/Footer';
 
 function App() {
   const [inventory, setInventory] = useState(inventoryData.inventory);
@@ -74,8 +75,8 @@ function App() {
 
   return (
     <>
+      <Header cart={cart} handleOpenCart={handleOpenCart} />
       <main>
-        <Header cart={cart} handleOpenCart={handleOpenCart} />
         <ProductList
           productList={inventory}
           handleAddItemToCart={handleAddItemToCart}
@@ -91,12 +92,7 @@ function App() {
           />
         )}
       </main>
-      {/* <footer>
-        <p>
-          Made with ❤️ | &copy; {year.current}{' '}
-          <a href="https://codethedream.org/">CTD </a>
-        </p>
-      </footer> */}
+      <Footer />
     </>
   );
 }
