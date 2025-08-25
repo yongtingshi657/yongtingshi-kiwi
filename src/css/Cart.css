@@ -1,0 +1,77 @@
+.cartScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(5px); /* blur effect */
+  background: rgba(0, 0, 0, 0.2); /* optional dim */
+  z-index: 999; /* below the cart, above everything else */
+  pointer-events: auto; /* makes sure it catches clicks */
+}
+
+.cartListWrapper {
+  width: 50%;
+  position: absolute;
+  top: 100px; /* overlap upward by half of card height */
+  left: 70%; /* center horizontally */
+  transform: translateX(-50%);
+  border: 1px solid black;
+  background-color: bisque;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  width: 500px;
+  z-index: 1000;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cartList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+  padding: 5px;
+}
+
+.cartListItem {
+  display: flex;
+  background-color: white;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  width: 400px;
+  padding: 5px;
+}
+
+.cartListItem img {
+  width: 60px;
+   flex: 0 0 15%;
+}
+
+.cartListItemInfo {
+ flex: 0 0 25%;
+}
+
+.cartListItemInfo h2 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.cartListItemInfo p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: gray;
+}
+
+.cartListItemSubtotal {
+    width: 120px;
+    text-align: right;
+    flex: 1;
+    border-left: 1px grey solid;
+}

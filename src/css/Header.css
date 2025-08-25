@@ -17,49 +17,26 @@ header {
 
 .shopping-cart-container button{
     background-color: lightblue;
+    position: relative;
+    cursor: pointer;
+    padding: 0;
 }
 
 
 .cart-number {
     position: absolute;
-    top:8px;
-    right: 30px;
+    top:50%;
+    left: 50%;
     color: white;
-    font-size: 25px;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
     font-weight: 600;
+    
 }
 
 .shopping-cart-icon {
     width: 100%;
-    height: auto;
-    position: relative;
     cursor: pointer;
+    display: block;
 }
 
-.cartListWrapper{
-    width:50%;
-    position: absolute;
-    top: 100px; /* overlap upward by half of card height */
-    left: 70%; /* center horizontally */
-    transform: translateX(-50%);
-    border: 1px solid black;
-    background-color: bisque;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    border-radius: 8px;
-    width: 500px;
-    z-index: 1000;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.cartList{
-    list-style: none;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); 
-    justify-content: space-between;
-    gap: 10px;
-    align-items: center;
-}
